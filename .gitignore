@@ -1,0 +1,22 @@
+# Configuración local de Claude Code (permisos y rutas de cada equipo)
+.claude/settings.local.json
+
+# Estado transitorio de los hooks
+.claude/hooks/.state/
+
+# Python
+__pycache__/
+*.pyc
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Material bruto de la bandeja de entrada.
+# Las grabaciones y transcripciones pueden contener datos personales. Si tu repositorio
+# va a ser compartido, descomenta estas líneas para no subirlas:
+# En_proceso/**/*.mp4
+# En_proceso/**/*.m4a
+# En_proceso/**/*.mp3
+# En_proceso/**/*.wav

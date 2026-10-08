@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Si usas process-atlas o su metodología, cítalo con estos datos."
+title: "process-atlas: sistema de documentación de procesos con Claude Code"
+type: software
+authors:
+  - family-names: "Calle Pinedo"
+    given-names: "Diego"
+repository-code: "https://github.com/diegocalle10-droid/process-atlas"
+version: "0.1.0"
+date-released: "2026-10-08"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - claude-code
+  - iso-9001
+  - bpmn
+  - process-documentation
+  - sop

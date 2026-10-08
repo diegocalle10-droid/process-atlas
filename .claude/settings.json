@@ -1,0 +1,66 @@
+{
+  "agent": "orquestador-procesos",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/triaje_sesion.py\"",
+            "timeout": 30,
+            "statusMessage": "Triaje de arranque del sistema de procesos..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre_escritura.py\"",
+            "timeout": 15,
+            "statusMessage": "Validando código de documento contra el registro..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/post_escritura.py\"",
+            "timeout": 15,
+            "statusMessage": "Inscribiendo código y normalizando nombre..."
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/auditar_codigos.py\"",
+            "timeout": 20,
+            "statusMessage": "Auditando códigos MPR/PRC/MAN..."
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|PowerShell|Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/actualizar_vistas.py\"",
+            "timeout": 20,
+            "statusMessage": "Actualizando árbol y tabla de fichas..."
+          }
+        ]
+      }
+    ]
+  }
+}
