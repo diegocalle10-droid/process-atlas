@@ -68,6 +68,7 @@ El bloque lo regenera `.claude/hooks/actualizar_vistas.py` cada vez que cambia e
 │   └── README.md — ejemplo de organización ficticia
 ├── tests/ — pruebas del motor
 │   └── test_motor.py — pruebas del motor
+├── .gitattributes — finales de línea (LF)
 ├── .gitignore — exclusiones de git
 ├── CHANGELOG.md — historial de versiones públicas
 ├── CITATION.cff — cita del proyecto

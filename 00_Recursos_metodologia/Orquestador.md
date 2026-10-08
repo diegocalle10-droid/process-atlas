@@ -80,6 +80,7 @@ La estructura física del repositorio vive solo en `Arbol_del_proyecto.md`. El �
 | `CITATION.cff` | Cómo citar el proyecto y a su autor. | cita del proyecto | `CITATION.cff` |
 | `CHANGELOG.md` | Cambios por versión publicada del proyecto. | historial de versiones públicas | `CHANGELOG.md` |
 | `.gitignore` | Archivos locales que no se suben al repositorio: permisos locales, estado de los hooks y cachés. | exclusiones de git | `.gitignore` |
+| `.gitattributes` | Normaliza los finales de línea a LF en el repositorio para que hooks y scripts funcionen en Windows, macOS y Linux. | finales de línea (LF) | `.gitattributes` |
 | `.github/` | Integración continua del repositorio público. | integración continua | `.github/` |
 | Flujo de integración continua | Ejecuta las pruebas del motor en Windows, Linux y macOS en cada cambio. | integración continua | `.github/*` |
 | `ejemplos/` | Perfil y mapa de procesos de una organización ficticia para probar el despliegue. | ejemplo de organización ficticia | `ejemplos/` |
